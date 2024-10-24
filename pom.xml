@@ -3,31 +3,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Informacion del proyecto -->
+    <!-- Project information -->
     <groupId>com.example</groupId>
     <artifactId>accreditation-service</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <!-- Parent de Spring Boot -->
+    <!-- Spring Boot parent-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.3</version> <!-- Coloca la version correcta de Spring Boot -->
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.6.3</version>
+        <relativePath/>
     </parent>
 
-    <!-- Propiedades -->
+    <!-- Properties -->
     <properties>
         <java.version>11</java.version>
-        <spring.kafka.version>2.6.7</spring.kafka.version> <!-- Especifica la versión de Kafka -->
+        <spring.kafka.version>2.6.7</spring.kafka.version>
     </properties>
 
-    <!-- Dependencias -->
+    <!-- Dependencies -->
     <dependencies>
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
-            <version>2.2.3</version> <!-- O la version adecuada según tu entorno -->
+            <version>2.2.3</version>
         </dependency>
 
         <dependency>
@@ -58,14 +58,14 @@
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
-            <version>${spring.kafka.version}</version> <!-- Usar la propiedad definida -->
+            <version>${spring.kafka.version}</version>
         </dependency>
     </dependencies>
 
-    <!-- Configuracion del build -->
+    <!-- build -->
     <build>
         <plugins>
-            <!-- Plugin para compilar codigo Java -->
+            <!-- Plugin Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -76,20 +76,20 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin para empaquetar en JAR -->
+            <!-- Plugin pkt JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
             </plugin>
 
-            <!-- Plugin para generar un JAR ejecutable con Spring Boot -->
+            <!-- Plugin JAR Spring Boot -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.6.3</version>
                 <configuration>
-                    <mainClass>com.example.accreditation.AccreditationServiceApplication</mainClass> <!-- Cambia esto por la clase con el método main -->
+                    <mainClass>com.example.accreditation.AccreditationServiceApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
